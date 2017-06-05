@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+
+  alpine-35:
+    build:
+      context: .
+      dockerfile: Dockerfile35
+    environment:
+      - foo.bar=baz
+      - FOO_BAR=baz
+
+  alpine-36:
+    build:
+      context: .
+      dockerfile: Dockerfile36
+    environment:
+      - foo.bar=baz
+      - FOO_BAR=baz
+
+  alpine-36-overriddencommand:
+    build:
+      context: .
+      dockerfile: Dockerfile36
+    environment:
+      - foo.bar=baz
+      - FOO_BAR=baz
+    command: env
